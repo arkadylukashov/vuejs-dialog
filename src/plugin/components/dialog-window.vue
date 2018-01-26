@@ -10,8 +10,12 @@
                     <div class="dg-main-content">
 
                         <div class="dg-content-body">
-                            <div v-if="options.html" class="dg-content" v-html="options.message"></div>
-                            <div v-else="" class="dg-content">{{ options.message }}</div>
+                            <div v-if="options.title" class="dg-title">{{ options.title }}</div>
+
+                            <template v-if="!!options.message">
+                              <div v-if="options.html" class="dg-content" v-html="options.message"></div>
+                              <div v-else="" class="dg-content">{{ options.message }}</div>
+                            </template>
 
                             <form v-if="isHardConfirm || isPrompt" class="dg-form" @submit.prevent="submitDialogForm">
                                 <label for="dg-input-label" style="font-size: 13px">

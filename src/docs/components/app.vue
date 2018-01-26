@@ -160,7 +160,9 @@
                 this.$notify(msg)
             },
             showAlertDialog(){
-                this.$dialog.alert(trans('messages.alert'))
+                this.$dialog.alert(trans('messages.alert'), {
+                  title: 'sex'
+                })
             },
             showBasicDialog(){
                 this.$dialog.confirm(trans('messages.basic'))
